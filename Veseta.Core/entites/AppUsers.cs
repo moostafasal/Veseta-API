@@ -12,15 +12,12 @@ namespace Veseta.Core.entites
 {
     public class AppUsers: IdentityUser
     {
-        public string usertype { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-
-        [EnumDataType(typeof(Gender))]
         public Gender Gender { get; set; }
 
-        public virtual ICollection<AppointmentRequest> AppointmentRequest { get; set; }
-
+        public virtual ICollection<Appointment> Appointments { get; set; }
+        public virtual ICollection<Booking> Bookings { get; set; }
 
 
 

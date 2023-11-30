@@ -11,7 +11,7 @@ namespace Veseta.Core.entites
         public int Id { get; set; }
 
         public days day { get; set; }
-        public virtual ICollection<DoctorAvailability> DoctorAvailabilities { get; set; }
+
 
     }
 }

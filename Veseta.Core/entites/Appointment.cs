@@ -12,8 +12,9 @@ namespace Veseta.Core.entites
         public int Id { get; set; }
         public string DoctorId { get; set; }
         public virtual Doctor Doctor { get; set; }
-        public int DoctorAvailabilityId { get; set; }
-        public virtual DoctorAvailability DoctorAvailability { get; set; }
+
+        public virtual Days Day { get; set; }
+        public virtual ICollection<TimeSlot> TimeSlots { get; set; }
         public bool IsConfirmed { get; set; }
 
     }

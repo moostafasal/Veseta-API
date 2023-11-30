@@ -13,7 +13,7 @@ namespace Veseta.Core.entites
         public int TimeSlotId { get; set; }
 
         // Navigation properties
-        public virtual days Day { get; set; }
+        public virtual days Day { get; set; }// enum
         public virtual TimeSlot TimeSlot { get; set; }
     }
 }

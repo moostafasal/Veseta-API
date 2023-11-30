@@ -15,6 +15,8 @@ namespace Veseta.Core.entites
 
         [Required]
         public string pictureUrl { get; set; }
+        public virtual ICollection<Specialization> Specializations { get; set; }
+
 
         public virtual ICollection<Appointment> Appointments { get; set; }
 

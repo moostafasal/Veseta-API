@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 
 namespace Veseta.Core.entites
 {
-    public class TimeSlot
+    public class SpecializationLookup
     {
         public int Id { get; set; }
-        public string Time { get; set; }
+        public string Name { get; set; }
 
-        public virtual ICollection<Appointment> Appointments { get; set; }
+        // Navigation properties
+        public virtual ICollection<Doctor> Doctors { get; set; }
     }
+
 }
