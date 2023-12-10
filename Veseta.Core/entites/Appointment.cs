@@ -3,19 +3,30 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Veseta.Core.Enum;
-
 namespace Veseta.Core.entites
 {
-    public class Appointment
+    public class Appointment : BaseEntity
     {
-        public int Id { get; set; }
-        public string DoctorId { get; set; }
-        public virtual Doctor Doctor { get; set; }
+        public Appointment()
+        {
 
-        public virtual Days Day { get; set; }
-        public virtual ICollection<TimeSlot> TimeSlots { get; set; }
-        public bool IsConfirmed { get; set; }
+        }
+        public Appointment(decimal price, DayOfWeek day, ICollection<TimeSlot> timeSlots, string doctorId)
+        {
+            Price = price;
+            Day = day;
+            TimeSlots = timeSlots;
+            DoctorId = doctorId;
+        }
+
+        public decimal Price { get; set; }
+        public DayOfWeek Day { get; set; }
+        public ICollection<TimeSlot> TimeSlots { get; set; }
+
+        public string DoctorId { get; set; }
+        public Doctor Doctor { get; set; }
+
+
 
     }
 }

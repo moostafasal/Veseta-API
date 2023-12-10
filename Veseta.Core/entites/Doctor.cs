@@ -1,25 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Veseta.Core.entites
 {
-    public class Doctor:AppUsers
+    public class Doctor : ApplicationUser
     {
-        //FK form AppUsers
-        [Key]
-        public int Id { get; set; }
-
-        [Required]
-        public string pictureUrl { get; set; }
-        public virtual ICollection<Specialization> Specializations { get; set; }
-
-
-        public virtual ICollection<Appointment> Appointments { get; set; }
-
-
+        public int SpecializationId { get; set; }
+        public Specialization Specialzation { get; set; }
+        public ICollection<Booking> requests { get; set; }
+        public ICollection<Appointment> Appointments { get; set; }
     }
 }

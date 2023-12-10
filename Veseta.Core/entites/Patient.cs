@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Veseta.Core.entites
 {
-    public class Specialization : BaseEntity
+    public class Patient : ApplicationUser 
     {
-        public string SpecializationName { get; set; }
+        public ICollection<Booking> Requests { get; set; }
     }
 }

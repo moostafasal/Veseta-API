@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Veseta.Core.entites
+namespace Veseta.CoreCore.DTOs
 {
-    public class Specialization : BaseEntity
+    public class TopFiveSpecializationsDTO
     {
+        public int NumberOfRequests { get; set; }
         public string SpecializationName { get; set; }
     }
 }

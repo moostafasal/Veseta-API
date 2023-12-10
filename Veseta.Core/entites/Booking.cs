@@ -1,25 +1,36 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Veseta.Core.entites
 {
-    public class AppointmentRequest
+    public class Booking : BaseEntity
     {
-        public int Id { get; set; }
-        public int DoctorId { get; set; }
-        public virtual Doctor Doctor { get; set; }
-        public int DoctorAvailabilityId { get; set; }
-        public virtual DoctorAvailability DoctorAvailability { get; set; }
+
+        public BookingStatus BookingState { get; set; } = BookingStatus.Pending; 
+
         public decimal Price { get; set; }
-
         public decimal FinalPrice { get; set; }
-        public int Status { get; set; }
-        public DateTime BookingDate { get; set; }
 
+        [ForeignKey("Discount")]
+        public int? DiscountCodeCouponId { get; set; }
+        public Discount? DiscountCodeCoupon { get; set; }
 
+        // Nav prop for patient 
+        [ForeignKey("Patient")]
+        public string PatientId { get; set; }
+        [InverseProperty("Requests")]
+
+        public Patient Patient { get; set; }
+
+        // Nav Prop for Doctor
+        [ForeignKey("Doctor")]
+        public string DoctorId { get; set; }
+        public Doctor Doctor { get; set; }
+
+        [ForeignKey("TimeSlot")]
+
+        public int TimeSlotId { get; set; }
+        public TimeSlot TimeSlot { get; set; }
 
 
 

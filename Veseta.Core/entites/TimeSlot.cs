@@ -1,16 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Veseta.Core.entites
+﻿namespace Veseta.Core.entites
 {
-    public class TimeSlot
+    public class TimeSlot  : BaseEntity
     {
-        public int Id { get; set; }
-        public string Time { get; set; }
+        public TimeSlot()
+        {
 
-        public virtual ICollection<Appointment> Appointments { get; set; }
+        }
+        public TimeSlot(string time, bool Booked)
+        {
+            Time = time;
+           Booked = Booked;
+        }
+
+        public string Time { get; set; }
+        public bool Booked { get; set; } = false;
+
+        public int AppointmentId { get; set; }
+        public Appointment Appointment { get; set; }
     }
 }
